@@ -45,10 +45,19 @@ A modern, privacy-friendly web app for planning meetings across timezones. Selec
 1. **Pick Locations:**
    - Click on the map to add participants. Each location shows country, timezone, and current local time.
    - Add as many locations as needed. Remove any by clicking the "×" next to their name.
+   
+   ![Pick Locations Screenshot](choose-region.png)
+   *Pick locations on the map*
 2. **View Calendar:**
    - Switch to the calendar step. Filter by common workdays, weekends, or holidays. Holidays are color-coded by country.
+   
+   ![View Calendar Screenshot](choose-date.png)
+   *View and filter the calendar*
 3. **Select Date & Time:**
    - Click a date to open the time filter. Adjust awake hours if needed. Select a suitable hour when all are awake.
+   
+   ![Select Time Screenshot](choose-time.png)
+   *Select a suitable time for all participants*
 4. **See Results:**
    - Confirm your selection to view the meeting time in each participant's local time, beautifully displayed.
 5. **Reset:**
