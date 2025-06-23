@@ -60,6 +60,9 @@ A modern, privacy-friendly web app for planning meetings across timezones. Selec
    *Select a suitable time for all participants*
 4. **See Results:**
    - Confirm your selection to view the meeting time in each participant's local time, beautifully displayed.
+   
+   ![See Results Screenshot](choose-result.png)
+   *View the meeting time result for all participants*
 5. **Reset:**
    - Use the Reset button to start over at any time.
 
