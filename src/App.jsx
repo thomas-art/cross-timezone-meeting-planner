@@ -3,6 +3,7 @@ import MapLocationPicker from './components/MapLocationPicker';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment-timezone';
+import ct from 'countries-and-timezones';
 
 const steps = [
   'Pick locations',
@@ -32,6 +33,15 @@ const countryColors = [
   '#38bdf8', // cyan
   '#facc15', // gold
 ];
+
+// 获取代表性IANA时区名
+function getTimezoneByCountryCode(countryCode) {
+  const country = ct.getCountry((countryCode || '').toUpperCase());
+  if (country && country.timezones && country.timezones.length > 0) {
+    return country.timezones[0]; // 多时区国家取第一个
+  }
+  return 'UTC';
+}
 
 function isWeekend(date) {
   const day = date.getDay();
@@ -187,7 +197,7 @@ export default function App() {
       const isPublic = h.type === 'Public';
       // 节假日本地日期转为当前日历时区的区间
       // nager.at 的 date 是 'YYYY-MM-DD'，本地时区为 h.countryCode（不是 countyCode）
-      const localStart = moment.tz(h.date, 'YYYY-MM-DD', h.countryCode || code);
+      const localStart = moment.tz(h.date, 'YYYY-MM-DD', getTimezoneByCountryCode(h.countryCode || code));
       const localEnd = localStart.clone().add(1, 'day');
       // 转为当前日历时区
       const start = localStart.clone().tz(calendarTz).toDate();
